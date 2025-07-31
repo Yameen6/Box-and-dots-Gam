@@ -1,0 +1,185 @@
+/* General body styling */
+body {
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #e3f2fd; /* Changed to a lighter blue background */
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #333;
+}
+
+/* Game container styling */
+.game-container {
+    background-color: #ffffff;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 90%; /* Responsive max width */
+    width: 500px; /* Base width */
+    position: relative; /* For message box positioning */
+}
+
+/* Game title */
+h1 {
+    color: #4a90e2; /* Blue title */
+    margin-bottom: 10px;
+    font-size: 2.2em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+
+/* Game info (score, turn) */
+.game-info {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.player-score {
+    padding: 8px 15px;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+#player1-score {
+    background-color: #ffe0b2; /* Light orange for Player 1 */
+    color: #e65100; /* Dark orange text */
+}
+
+#player2-score {
+    background-color: #bbdefb; /* Light blue for Player 2 */
+    color: #1976d2; /* Dark blue text */
+}
+
+.current-turn {
+    padding: 8px 15px;
+    border-radius: 8px;
+    background-color: #e0f2f7; /* Light cyan */
+    color: #00796b; /* Teal */
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    min-width: 120px; /* Ensure consistent width */
+    text-align: center;
+}
+
+/* Canvas styling */
+canvas {
+    background-color: #e8f5e9; /* Very light green background for canvas */
+    border: 2px solid #a5d6a7; /* Green border */
+    border-radius: 10px;
+    display: block;
+    touch-action: none; /* Prevent browser touch actions */
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.1);
+}
+
+/* Button styling */
+button {
+    background: linear-gradient(145deg, #66bb6a, #43a047); /* Green gradient */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px; /* Pill shape */
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 150, 0, 0.2); /* Green shadow */
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+button:hover {
+    background: linear-gradient(145deg, #43a047, #388e3c);
+    box-shadow: 0 8px 20px rgba(0, 150, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 10px rgba(0, 150, 0, 0.2);
+}
+
+/* Message box styling */
+.message-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fffde7; /* Changed to a light yellow for pop-up effect */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    padding: 30px;
+    text-align: center;
+    z-index: 1000;
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    gap: 20px;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.message-box h2 {
+    color: #4a90e2;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.message-box p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.message-box button {
+    background: linear-gradient(145deg, #4a90e2, #2d70bb); /* Blue gradient for message box button */
+    box-shadow: 0 5px 15px rgba(0, 0, 255, 0.2);
+}
+
+.message-box button:hover {
+    background: linear-gradient(145deg, #2d70bb, #1e5a9a);
+    box-shadow: 0 8px 20px rgba(0, 0, 255, 0.3);
+}
+
+/* Fade in animation for message box */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, -60%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .game-container {
+        padding: 20px;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 0; /* No border-radius on small screens for full width */
+        box-shadow: none; /* No shadow on small screens */
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .game-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .player-score, .current-turn {
+        width: 80%;
+        text-align: center;
+    }
+
+    button {
+        width: 80%;
+    }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dots and Boxes Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Dots and Boxes</h1>
+        <div class="game-info">
+            <div id="player1-score" class="player-score">Player 1: 0</div>
+            <div id="current-turn" class="current-turn">Player 1's Turn</div>
+            <div id="player2-score" class="player-score">Player 2: 0</div>
+        </div>
+        <canvas id="gameCanvas"></canvas>
+        <button id="resetButton">Reset Game</button>
+
+        <!-- Message Box for game end/info -->
+        <div id="messageBox" class="message-box">
+            <h2 id="messageTitle"></h2>
+            <p id="messageText"></p>
+            <button id="messageButton">Play Again</button>
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
